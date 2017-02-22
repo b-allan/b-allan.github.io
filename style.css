@@ -1,0 +1,20 @@
+body {
+    background-color: #FFFFFF;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+a:link{
+  color: blue;
+}
+
+a:visited{
+  color: purple;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: .5px solid black;
+}
