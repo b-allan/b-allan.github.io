@@ -1,20 +1,47 @@
 body {
     background-color: #FFFFFF;
     font-family: Verdana, Arial, sans-serif;
-}
-
-a:link{
-  color: blue;
-}
-
-a:visited{
-  color: purple;
+    text-align: center;
 }
 
 table {
   border-collapse: collapse;
 }
 
+table.center {
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+  }
+
 table, th, td {
   border: .5px solid black;
+}
+
+div.header {
+    width: 150;
+    height:150;
+    padding:0;
+    background-color: #ffffff;
+    margin: 0;
+    }
+
+ul.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #555;
+    color: white;
 }
