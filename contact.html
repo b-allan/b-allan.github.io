@@ -5,12 +5,19 @@
   <title>Contact Us</title>
   <meta name="description" content="HTML5 Template">
   <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="script.js"></script>
+
 </head>
 <body>
   <div class="header">
   <h1><img src = "Logomakr_4xa5Qd.png" alt = "Company Logo"/></h1>
   </div>
   <h2 style="text-align:center;">Contact Us</h2>
+  <p id="DEMO"></p>
+  <script>
+      var d = new Date();
+      document.getElementById("DEMO").innerHTML = d.toDateString();
+  </script>
   <h2></h2>
   <ul class="navigation">
     <li><a href ="https://b-allan.github.io/pp1.html">Hex Cap Screws</a></li>
@@ -22,7 +29,7 @@
     Use this form to contact us if you need help with anything.</br>
     We will respond as soon as possible.
   </p>
-  <form action="">
+  <form name="myForm" action="/action_page_post.php" onsubmit="return validateForm()" method="post">
     First name:
     <input type="text" name="firstname">
     </br></br>
@@ -34,13 +41,9 @@
     </br></br>
     Reason for contact:
     <input type="radio" name="reason" value="problem" checked> Problem
-
     <input type="radio" name="reason" value="question"> Question
-
     <input type="radio" name="reason" value="order"> Order Status Update
-
     </br>
-
     <textarea name="message" rows="10" cols="40"></textarea>
     </br></br>
     <button type="submit" value="Submit">Submit</button>
