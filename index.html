@@ -23,7 +23,8 @@
   </br>
 
   Make United Fastener your go-to online fastener supplier!
-  <a href = "https://www.youtube.com/watch?v=3kxcw08p_oY"> Watch this video to see how nuts and bolts are made! </a>
+  <a href = "https://www.youtube.com/watch?v=3kxcw08p_oY">
+      Watch this video to see how nuts and bolts are made! </a>
    <p>
     See our available Fasteners
   </p>
@@ -52,6 +53,56 @@
   </ul> -->
   </p>
   <center>
-  <img src="fastener types.jpg"></img>
+  <!-- <img src="fastener types.jpg"></img> -->
+  <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="1_4-20x1YZ8.png" style="width:50%">
+    <!-- <div class="text">Caption Text</div> -->
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="1_4LWYZ8.png" style="width:50%">
+    <!-- <div class="text">Caption Two</div> -->
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="1_4-20x1SS.png" style="width:50%">
+    <!-- <div class="text">Caption Three</div> -->
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="1_4NLBSW.png" style="width:50%">
+    <!-- <div class="text">Caption Three</div> -->
+  </div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex> slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script>
+
+
 </body>
 </html>
