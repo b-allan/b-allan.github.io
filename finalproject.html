@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Final Project</title>
+  <style>
+    body {
+      background-image: url("galaxy.jpg");
+      overflow: hidden;
+      background-size: 100%;
+    }
+
+    #gray {
+      position: absolute;
+      top: 300px;
+    }
+
+    #white {
+      position: absolute;
+      top: 500px;
+    }
+
+    #grayWin {
+      display: none;
+      position: absolute;
+      right: 1pc;
+      top: 300px;
+      display: none;
+    }
+
+    #whiteWin {
+      display: none;
+      position: absolute;
+      right: 1pc;
+      top: 500px;
+    }
+  </style>
+</head>
+<body>
+  <img id="gray" src="gray.png" />
+  <img id="white" src="white.png">
+  <img id="grayWin" src="winner.png" onclick="window.location.reload()" />
+  <img id="whiteWin" src="winner.png" onclick="window.location.reload()" />
+  <img class="redlight" id="redlight" src="redlight.png" onclick="moveShips() + changeImage(this)" />
+</body>
+<script>
+  var width = screen.width - 130;
+
+  function moveShips() {
+    var grayShip = document.getElementById("gray");
+    var grayShipWin = document.getElementById("grayWin");
+    var whiteShip = document.getElementById("white");
+    var whiteShipWin = document.getElementById("whiteWin");
+
+    var grayShipPosition = 0;
+    var whiteShipPosition = 0;
+
+    var winner = false;
+    grayShipWin.style.display = "none";
+    whiteShipWin.style.display = "none";
+
+    var id = setInterval(frame, 5);
+
+    function frame() {
+      if (grayShipPosition >= width && whiteShipPosition >= width)
+      {
+        clearInterval(id);
+        return;
+      }
+      if (grayShipPosition < width)
+      {
+        grayShipPosition += Math.round(Math.random() * 10);
+        if (grayShipPosition >= width)
+        {
+          grayShipPosition = width;
+          if (!winner)
+          {
+            winner = true;
+            grayShipWin.style.display = "unset";
+            window.alert("Gray Ship Wins! Click the YELLOW STAR to race again.");
+          }
+        }
+        grayShip.style.left = grayShipPosition + "px";
+      }
+      if (whiteShipPosition < width)
+      {
+        whiteShipPosition += Math.round(Math.random() * 10);
+        if (whiteShipPosition >= width)
+        {
+          whiteShipPosition = width;
+          if (!winner)
+          {
+            winner = true;
+            whiteShipWin.style.display = "unset";
+            window.alert("White Ship Wins! Click the YELLOW STAR to race again.");
+          }
+        }
+        whiteShip.style.left = whiteShipPosition + "px";
+      }
+    }
+  }
+
+  function changeImage() {
+    var redlight = document.getElementsByClassName("redlight")[0];
+
+    if (redlight.src == "greenlight.png")
+    {
+      redlight.src = "redlight.png";
+    }
+    else
+    {
+      redlight.src = "greenlight.png";
+    }
+  }
+</script>
+</html>
